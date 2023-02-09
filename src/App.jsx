@@ -90,10 +90,10 @@ function App() {
               <p>Mínima: {parseInt(location.main.temp_min)}°C</p>
             </div>
             <div className="section4">
-              <p>
+              <p className="section5" title="Humidade">
                 <IoMdWater />{location.main.humidity}%
               </p>
-              <p>
+              <p className="section5" title="Velocidade do vento">
                 <TbWind />{location.wind.speed}km/h
               </p>
             </div>
