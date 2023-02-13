@@ -74,14 +74,14 @@ function App() {
               <img
                 crossOrigin="anonymous"
                 src={`https://countryflagsapi.com/png/${location.sys.country}`}
-                alt="country flag"
+                alt="1"
               />
             </div>
             <h3>{location.weather[0].description}</h3>
             <div className="section2">
               <img
                 src={`http://openweathermap.org/img/w/${location.weather[0].icon}.png`}
-                alt="weather icon"
+                alt="2"
               />
               <h3>{parseInt(location.main.temp)}°C</h3>
             </div>

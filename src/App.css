@@ -74,13 +74,13 @@ body {
   width: 50%;
   }
 
-  img[alt="country flag"] {
+  img[alt="1"] {
   width: 40px;
   height: 30px;
   margin-left: 10px;
   }
   
-  img[alt="weather icon"] {
+  img[alt="2"] {
   width: 50px;
   height: 50px;
   margin-right: 20px;
