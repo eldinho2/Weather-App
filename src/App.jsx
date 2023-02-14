@@ -28,12 +28,10 @@ function App() {
         )
         .then((response) => {
           setLocation(response.data);
-          console.log(response.data);
         })
         .catch((error) => {
           console.log(error);
         });
-      console.log(lat, lon);
     }
   }, [lat, lon]);
 
@@ -45,7 +43,6 @@ function App() {
       .then((response) => {
         setLocation(response.data);
         setError(false);
-        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
