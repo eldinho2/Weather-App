@@ -74,7 +74,7 @@ function App() {
         {location.length !== 0 ? (
           <>
             <div className="location-name">
-              <img src="./src/assets/pin.svg" alt="" />
+              <img src="https://raw.githubusercontent.com/eldinho2/Weather-App/49db64b2e7a3ad8fda55f7e851fdaf10910c3988/src/assets/pin.svg" alt="" />
               <h2>{location.name}</h2>
             </div>
             <div className="weather-info">
