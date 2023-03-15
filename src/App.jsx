@@ -67,7 +67,7 @@ function App() {
             }}
           />
           
-          <button onClick={handleSearch}><img className="lupa-img" src="./src/assets/1093183.svg" alt="" /></button>
+          <button onClick={handleSearch}><img className="lupa-img" src="https://raw.githubusercontent.com/eldinho2/Weather-App/44ff6ad0a6d21c83e26071a28a02f409408a1daa/src/assets/1093183.svg" alt="" /></button>
         </section>
       </div>
       <div className="weather-info-container">
@@ -95,14 +95,14 @@ function App() {
             </div>
             <div className="additional-informations">
               <div className="info-boxs" title="Humidade">
-                <img src="./src/assets/chuva.png" alt="" />
+                <img src="https://raw.githubusercontent.com/eldinho2/Weather-App/main/src/assets/chuva.png" alt="" />
                 <div className="humidity">
                 <p>Umidade</p>
                 <p>{location.main.humidity} %</p>
                 </div>
               </div>
               <div className="info-boxs" title="Velocidade do vento">
-                <img src="./src/assets/weather.png" alt="" />
+                <img src="https://raw.githubusercontent.com/eldinho2/Weather-App/main/src/assets/weather.png" alt="" />
                 <div className="wind">
                   <p>Vento</p>
                   <p>{location.wind.speed} km/h</p>
