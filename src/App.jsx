@@ -43,64 +43,83 @@ function App() {
       .then((response) => {
         setLocation(response.data);
         setError(false);
+        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
         setError(true);
       });
   };
+  
 
   return (
-    <div className="App">
-      <h1>Weather App</h1>
-      <div className="search-container">
-        <h3>Confira o clima em outra Cidade:</h3>
-        <input
-          type="text"
-          placeholder="Digite o nome da cidade"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-        />
-        <button onClick={handleSearch}>Buscar</button>
+    <main className="App">
+      <div className="header-container">
+        <header>Weather App</header>
+        <section className="search-container">
+          <input
+            type="text"
+            placeholder="Digite o nome de uma cidade"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            onKeyDown={(e) => {
+              e.key === "Enter" && handleSearch();
+            }}
+          />
+          
+          <button onClick={handleSearch}><img className="lupa-img" src="./src/assets/1093183.svg" alt="" /></button>
+        </section>
       </div>
       <div className="weather-info-container">
         {location.length !== 0 ? (
           <>
-            <div className="section1">
+            <div className="location-name">
+              <img src="./src/assets/pin.svg" alt="" />
               <h2>{location.name}</h2>
-              <img
-                crossOrigin="anonymous"
-                src={`https://countryflagsapi.com/png/${location.sys.country}`}
-                alt="1"
-              />
             </div>
-            <h3>{location.weather[0].description}</h3>
-            <div className="section2">
+            <div className="weather-info">
+              <div className="main-temp">
+              <h3>{parseInt(location.main.temp)}</h3>
+              <div className="main-temp-info">
+              <div className="celsius">°C</div>
               <img
                 src={`http://openweathermap.org/img/w/${location.weather[0].icon}.png`}
                 alt="2"
               />
-              <h3>{parseInt(location.main.temp)}°C</h3>
+              </div>
+              </div>
+              <div className="max-min-temp">
+                {parseInt(location.main.temp_max)}°
+                <span>{parseInt(location.main.temp_min)}°</span>
+              </div>
             </div>
-            <div className="section3">
-              <p>Máxima: {parseInt(location.main.temp_max)}°C</p>
-              <p>Mínima: {parseInt(location.main.temp_min)}°C</p>
-            </div>
-            <div className="section4">
-              <p className="section5" title="Humidade">
-                <IoMdWater />{location.main.humidity}%
-              </p>
-              <p className="section5" title="Velocidade do vento">
-                <TbWind />{location.wind.speed}km/h
-              </p>
+            <div className="additional-informations">
+              <div className="info-boxs" title="Humidade">
+                <img src="./src/assets/chuva.png" alt="" />
+                <div className="humidity">
+                <p>Umidade</p>
+                <p>{location.main.humidity} %</p>
+                </div>
+              </div>
+              <div className="info-boxs" title="Velocidade do vento">
+                <img src="./src/assets/weather.png" alt="" />
+                <div className="wind">
+                  <p>Vento</p>
+                  <p>{location.wind.speed} km/h</p>
+                </div>
+              </div>
+              <div className="weather-description info-boxs">
+              <img src={`http://openweathermap.org/img/w/${location.weather[0].icon}.png`}/>
+              <p>{location.weather[0].description}</p>
+              </div>
             </div>
           </>
         ) : (
-          <h3>Carregando...</h3>
+          <h3 className="loading">Carregando...</h3>
         )}
-        {error && <h3>Cidade não encontrada</h3>}
+        {error && <h3 className="error-message">Cidade não encontrada</h3>}
       </div>
-    </div>
+    </main>
   );
 }
 
