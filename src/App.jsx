@@ -94,14 +94,14 @@ function App() {
               </div>
             </div>
             <div className="additional-informations">
-              <div className="info-boxs" title="Humidade">
-                <img src="https://raw.githubusercontent.com/eldinho2/Weather-App/main/src/assets/chuva.png" alt="" />
+              <div className="info-boxs">
+                <IoMdWater color="white" />
                 <div className="humidity">
                 <p>Umidade</p>
                 <p>{location.main.humidity} %</p>
                 </div>
               </div>
-              <div className="info-boxs" title="Velocidade do vento">
+              <div className="info-boxs">
                 <img src="https://raw.githubusercontent.com/eldinho2/Weather-App/main/src/assets/weather.png" alt="" />
                 <div className="wind">
                   <p>Vento</p>
